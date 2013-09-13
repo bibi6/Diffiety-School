@@ -10,9 +10,23 @@
 
     <title>Diffiety-school</title>
     
-    <script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-    </script>
+   <!-- script type="text/javascript"
+            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
+    /script -->
+
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">
+    MathJax.Hub.Config({
+        extensions: ["tex2jax.js","TeX/AmsMath.js","TeX/AMSsymbols.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+    });
+   </script>
+
   </head>
 
   <body>
@@ -43,6 +57,12 @@
 <a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 aaaaa
+
+
+          Here is an example MathJax inline rendering $1/x^{2}$, and here is a block rendering: 
+$$ \frac{1}{n^{2}} $$
+
+aaaa
 
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
