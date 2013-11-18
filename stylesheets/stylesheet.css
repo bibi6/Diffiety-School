@@ -121,6 +121,11 @@ a {
   -ms-transition: text-shadow 0.5s ease;
 }
 
+h1 a {
+  text-decoration: none;
+  color: #ffffff;
+  text-shadow: none;
+}
 /*#main_content a:hover {
   color: #0069ba;
   text-shadow: #0090ff 0px 0px 2px;
