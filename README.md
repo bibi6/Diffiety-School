@@ -5,7 +5,7 @@ This is a project for Diffiety-School site. We hope to enable MathJax and be abl
 
 ## Website
 
-Available by [clicking here](http://diffietyschool.github.io/Diffiety-School/)
+Available by [clicking here](http://diffietyschool.github.io/Diffiety-School/).
 
 ##Repositories
 
