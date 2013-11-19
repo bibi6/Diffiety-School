@@ -67,7 +67,7 @@ for [l2]. *)
     else if l2 = "en" then ".."
     else "../" ^ l2 in*)
   let langs = ["en"] in
-  let out_dir lang = "www-"^lang in
+  let out_dir lang = if lang = "en" then "./" else lang in
   let filter _ = true in
   let process_html lang p =
     eprintf "Processing %s\n%!" (Path.full p);
@@ -82,6 +82,8 @@ for [l2]. *)
     let page = Weberizer.read (Path.full p) ~bindings:b in
     let tpl = Diffiety.title tpl (Weberizer.title_of page) in
     let prefix = if lang = "en" then "" else "../" in
+    let stylesheet_loc = prefix^"stylesheets/stylesheet.css" in
+    let tpl = Diffiety.stylesheet tpl stylesheet_loc in
     let img_dir = url_base ^ prefix ^ "img/" in
     (*let tpl = Ocamlorg.img_dir tpl img_dir in
     let tpl = Ocamlorg.css_dir tpl (url_base ^ prefix ^ "css/") in
