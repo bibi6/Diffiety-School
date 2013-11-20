@@ -8,9 +8,6 @@ web: build
 	else if [ -x ./build.exe ]; then ./build.exe;\
 	else echo "No build executable: error!"; fi; fi
 
-$(TEMPLATE_DIR)/diffiety.ml  $(TEMPLATE_DIR)/diffiety.mli : $(TEMPLATE_DIR)/diffiety.html
-	cd $(TEMPLATE_DIR); weberizer diffiety.html
-
 build: 
 	make -C $(TEMPLATE_DIR);
 	if [ -x $(TEMPLATE_DIR)/build.com ]; then  mv $(TEMPLATE_DIR)/build.com . ; fi

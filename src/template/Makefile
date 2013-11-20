@@ -24,3 +24,6 @@ diffiety.cmo: diffiety.ml diffiety.cmi
 
 diffiety.cmi: diffiety.mli
 	$(OCAMLOPT) -c $(PACKS) diffiety.mli
+
+diffiety.ml diffiety.mli: diffiety.html
+	weberizer diffiety.html
