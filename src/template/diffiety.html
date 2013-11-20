@@ -9,8 +9,32 @@
     <link rel="stylesheet" type="text/css" media="screen" href="${stylesheet}">
 
     <title>${title} - Diffiety School</title>
-    
-     <meta name="author" content="The Diffiety School team" />
+    <!-- },
+      -->
+    <meta name="author" content="The Diffiety School team" />
+    <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { extensions: ["tex2jax.js","AMSmath.js", "AMSsymbols.js"]},tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!--
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+            processEscapes: true,
+        },
+        "HTML-CSS": { availableFonts: ["TeX"] }
+        });
+    </script>-->
+ <!--   <scr ipt type="text/javascript"
+       src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMSS-MML_HTMLorMML">
+    </scr ipt>-->
+    <script type="text/javascript"
+       src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMSS-MML_HTMLorMML">
+    </script>
   </head>
 
   <body>
@@ -40,13 +64,16 @@
       </footer>
     </div>
     <!-- Following OCaml website advice, scripts are placed at the end so that the page loads faster.-->
-      <!-- script type="text/javascript"
-            src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-    /script -->
 
-    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js" type="text/javascript">
+  <!--  <scr ipt type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </scr ipt>
+     
     MathJax.Hub.Config({
-        extensions: ["tex2jax.js","TeX/AmsMath.js","TeX/AMSsymbols.js"],
+        extensions: ["tex2jax.js"],
+        TeX: {
+ 					extensions: []
+        }
         jax: ["input/TeX","output/HTML-CSS"],
         tex2jax: {
             inlineMath: [ ['$','$'], ["\\(","\\)"] ],
@@ -55,7 +82,7 @@
         },
         "HTML-CSS": { availableFonts: ["TeX"] }
     });
-   </script>
-
+   </scr ipt>
+-->
   </body>
 </html>
