@@ -11,7 +11,26 @@
 
     <title>Test page - Diffiety School</title>
     
-     <meta content="The Diffiety School team" name="author"/>
+    <meta content="The Diffiety School team" name="author"/>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: {
+          extensions: ["tex2jax.js","AMSmath.js", "AMSsymbols.js"]
+          },
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+          displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+          processEscapes: true
+          },
+        "HTML-CSS": {
+          availableFonts: ["TeX"]
+          },
+        jax: ["input/TeX","output/HTML-CSS"]
+      });
+    </script>
+    <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+ 
   </head>
 
   <body>
@@ -108,21 +127,5 @@ document.getElementById("ocaml_1").innerHTML = '<a href="mailto:' + local + '@' 
         <p>Published with <a href="http://pages.github.com">GitHub Pages</a>.</p>
       </footer>
     </div>
-    
-      
-
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js">
-    MathJax.Hub.Config({
-        extensions: ["tex2jax.js","TeX/AmsMath.js","TeX/AMSsymbols.js"],
-        jax: ["input/TeX","output/HTML-CSS"],
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true,
-        },
-        "HTML-CSS": { availableFonts: ["TeX"] }
-    });
-   </script>
-
   </body>
 </html>
