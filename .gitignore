@@ -1,15 +1,7 @@
 #Temporary files (ending with a ~)
 *~
-#HTML files: ignore them...
-*.html
-#... but not in the src/ directory
-!src/*.html
-#Templating module
-src/template/diffiety.ml
-src/template/diffiety.mli
-#Generated OCaml files
-src/template/*.[ao]
-src/template/*.cm[iaox]
-src/template/*.cmx[as]
+#Ignore the source files
+src/*
+#and the builder
 build.exe
 build.com
