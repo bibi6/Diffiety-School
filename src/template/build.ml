@@ -1,3 +1,7 @@
+(** build.ml inspired from OCaml's website build.ml:
+https://github.com/ocaml/ocaml.org/blob/master/script/build.ml
+*)
+
 open Printf
 open Nethtml
 module Path = Weberizer.Path
@@ -75,16 +79,14 @@ for [l2]. *)
     let tpl = Diffiety.url_base tpl (Weberizer.Path.to_base p) in*)
     let url_base = if Path.in_base p then "" else Path.to_base p in
     Weberizer.Binding.string b "url_base" url_base;
-   (* let top = Code.toplevel () in
-    let path_from_base =
-      Filename.concat "src/html/" (Weberizer.Path.from_base p) in
-    Weberizer.Binding.fun_html b "ocaml" (Code.ocaml top path_from_base);*)
     let page = Weberizer.read (Path.full p) ~bindings:b in
     let tpl = Diffiety.title tpl (Weberizer.title_of page) in
     let prefix = if lang = "en" then "" else "../" in
-    let stylesheet_loc = url_base ^ prefix^"stylesheets/stylesheet.css" in
+    let stylesheet_loc = url_base ^ prefix^ Locations.stylesheet in
     let tpl = Diffiety.stylesheet tpl stylesheet_loc in
-    let img_dir = url_base ^ prefix ^ "images/" in
+    let index = url_base ^ Locations.index in
+    let tpl = Diffiety.index tpl index in
+    let img_dir = url_base ^ prefix ^ Locations.img_dir in
     (*let tpl = Ocamlorg.img_dir tpl img_dir in
     let tpl = Ocamlorg.css_dir tpl (url_base ^ prefix ^ "css/") in
     let tpl = Ocamlorg.javascript_dir tpl (url_base ^ prefix ^ "js/") in*)
@@ -92,6 +94,10 @@ for [l2]. *)
     let body = Weberizer.protect_emails body in
     let body = img_path_translations p body ~img_dir in
     let tpl = Diffiety.main tpl body in
+    let subject = "Contact from webpage "^url_base^(Path.to_base p) in
+    let args = ["href","mailto:"^Locations.diffiety_email^"?subject="^subject] in
+    let email = Weberizer.email ~args Locations.diffiety_email in
+    let tpl = Diffiety.diffiety_email tpl email in
     (*
     let tpl = add_menu tpl lang p in
 
@@ -100,5 +106,5 @@ for [l2]. *)
     Code.close_toplevel top;*)
     Diffiety.render tpl
   in
-  Weberizer.iter_html ~filter ~langs "src/html" ~out_dir process_html
+  Weberizer.iter_html ~filter ~langs Locations.sources ~out_dir process_html
                       ~perm:0o755
