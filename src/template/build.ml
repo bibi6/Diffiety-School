@@ -94,9 +94,9 @@ for [l2]. *)
     let body = Weberizer.protect_emails body in
     let body = img_path_translations p body ~img_dir in
     let tpl = Diffiety.main tpl body in
-    let subject = "Contact from webpage "^url_base^(Path.to_base p) in
-    let args = ["href","mailto:"^Locations.diffiety_email^"?subject="^subject] in
-    let email = Weberizer.email ~args Locations.diffiety_email in
+    let subject = "Contact from webpage "^(Path.from_base p)^"/"^(Path.filename p) in
+    let subject = "?subject="^subject in
+    let email = Weberizer.email (Locations.diffiety_email^subject) in
     let tpl = Diffiety.diffiety_email tpl email in
     (*
     let tpl = add_menu tpl lang p in
