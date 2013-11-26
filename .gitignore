@@ -8,6 +8,7 @@
 src/template/diffiety.ml
 src/template/diffiety.mli
 #Generated OCaml files
+src/template/.depend.ocaml
 src/template/*.[ao]
 src/template/*.cm[iaox]
 src/template/*.cmx[as]
