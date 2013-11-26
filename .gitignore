@@ -3,7 +3,7 @@
 #HTML files: ignore them...
 *.html
 #... but not in the src/ directory
-!src/*.html
+!src/**/*.html
 #Templating module
 src/template/diffiety.ml
 src/template/diffiety.mli
