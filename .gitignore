@@ -1,7 +1,7 @@
 #Temporary files (ending with a ~)
 *~
 #Ignore the source files
-src/*
+src/**
 #and the builder
 build.exe
 build.com
